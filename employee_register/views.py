@@ -22,4 +22,10 @@ def book_update(request, pk):
         return redirect("book_list")
     return render(request, "books/book_update.html", {"book": book})
 
+def book_delete(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    if request.method == "POST":
+        book.delete()
+        return redirect("book_list")
+    return render(request, "books/book_delete.html", {"book": book})
 
