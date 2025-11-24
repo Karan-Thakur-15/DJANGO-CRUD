@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Book</title>
+</head>
+<body>
+    <h1>Edit Book</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Title:</label><br>
+        <input type="text" name="title" value="{{ book.title }}"><br><br>
+
+        <label>Author:</label><br>
+        <input type="text" name="author" value="{{ book.author }}"><br><br>
+
+        <button type="submit">Update</button>
+        <a href="{% url 'book_list' %}">Cancel</a>
+    </form>
+</body>
+</html>

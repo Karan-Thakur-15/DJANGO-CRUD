@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Book</title>
+</head>
+<body>
+    <h1>Add New Book</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Title:</label><br>
+        <input type="text" name="title" placeholder="Enter title"><br><br>
+
+        <label>Author:</label><br>
+        <input type="text" name="author" placeholder="Enter author"><br><br>
+
+        <button type="submit">Save</button>
+        <a href="{% url 'book_list' %}">Cancel</a>
+    </form>
+</body>
+</html>
